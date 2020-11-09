@@ -28,10 +28,12 @@ const App = props => {
       { name: 'vikram', age: 23},
       { name: 'vijay', age: 24},
       { name: 'satyam', age: 22},
-    ],
-    otherState: 'some other value'
+    ]
   });
 
+ const [otherState, SetotherState] = useState('some other vaule'); 
+
+console.log(personsState,otherState);
 
   function switchNameHandler() {
     setPersonsState({
