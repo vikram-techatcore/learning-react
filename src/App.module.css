@@ -52,3 +52,24 @@
   font-size: 50px;
   color: #c1d606;
 }
+
+.button{
+  background-color: red;
+font: inherit;
+border: 1px solid blue;
+padding: 8px;
+cursor: pointer;
+color : yellow;
+}
+
+.button:hover {
+background-color: palegoldenrod;
+  color:black;
+}
+
+.button.Red{
+  background-color: brown;
+}
+.button.Red.hover {
+  background-color: rgb(67, 79, 74);
+}
