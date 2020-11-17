@@ -3,33 +3,39 @@ import React, { Component } from 'react';
 import Person from './Person/Person';
 
 class Persons extends Component {
+  // static getDerivedStateFromProps(props, state) {
+  //   console.log('[Persons.js] getDerivedStateFromProps');
+  //   return state;
+  // }
 
-// static getDerivedStateFromProps(props, state){
-//   console.log('[Person.js] getDerivedStateFromProps ');
-//   return state;
-// }
+  // componentWillReceiveProps(props) {
+  //   console.log('[Persons.js] componentWillReceiveProps', props);
+  // }
 
-componentWillReceiveProps(props){
-  console.log('[persons.js] componentWillReceiveProps', props );
-}
+  shouldComponentUpdate(nextProps, nextState) {
+    console.log('[Persons.js] shouldComponentUpdate');
+    return true;
+  }
 
-shouldComponentUpdate(nextProps, nextState){
-  console.log('[persons.js] shouldComponentUpdate');
-  return true;
-}
+  getSnapshotBeforeUpdate(prevProps, prevState) {
+    console.log('[Persons.js] getSnapshotBeforeUpdate');
+    return { message: 'Snapshot!' };
+  }
 
-getSnapshotBeforeUpdate(prevProps, prevState){
-  console.log('[Person.js] getSnapshotBeforeUpdate');
-  return {message: 'snapshot'};
-}
+  // componentWillUpdate() {
 
-componentDidUpdate(prevProps, prevState,snapshot){
-  console.log('[Person.js] componentDidUpdate');
-  console.log(snapshot);
-}
+  // }
 
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    console.log('[Persons.js] componentDidUpdate');
+    console.log(snapshot);
+  }
 
-  render(){
+  componentWillUnmount() {
+    console.log('[Persons.js] componentWillUnmount');
+  }
+
+  render() {
     console.log('[Persons.js] rendering...');
     return this.props.persons.map((person, index) => {
       return (
@@ -42,8 +48,7 @@ componentDidUpdate(prevProps, prevState,snapshot){
         />
       );
     });
-  };
- 
-};
+  }
+}
 
 export default Persons;
