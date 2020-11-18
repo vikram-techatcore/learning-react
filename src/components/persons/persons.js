@@ -12,14 +12,18 @@ class Persons extends Component {
   //   console.log('[Persons.js] componentWillReceiveProps', props);
   // }
 
-  shouldComponentUpdate(nextProps, nextState) {
-    console.log('[Persons.js] shouldComponentUpdate');
-    if (nextProps.person !== this.props.persons || nextProps.changed !== this.props.changed || nextProps.clicked !== this.props.clicked ){
-    return true;
-  }  else {
-    return false;
-  }
-}
+
+//   shouldComponentUpdate(nextProps, nextState) {
+//     console.log('[Persons.js] shouldComponentUpdate');
+// if (
+// nextProps.person !== this.props.persons || nextProps.changed !== this.props.changed || nextProps.clicked !== this.props.clicked 
+//       ){
+//     return true;
+//   }  else {
+//     return false;
+//   }
+// }
+
 
   getSnapshotBeforeUpdate(prevProps, prevState) {
     console.log('[Persons.js] getSnapshotBeforeUpdate');
